@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+
+.order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 30px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+</style>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Hospital Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/dashboard}">Dashboard</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="main-panel" style="background:#d6d6d6">
+
+<div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="card mt-2">
+        <div class="card-body">
+            <h4 class="card-title">Dashboard</h4>
+
+            <div class="card-content" style="border-radius: 24px;background-color: #1B2658;width: 326px;height: 128px;margin-left: 62px;margin-top: 89px;display: inline-block;color: #fff;">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="success"style="font-size:30px"><b th:text="${countPatient}"></b></h3>
+                            <span style="font-size:25px">Total Patients</span>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fa fa-users  float-right fa-4x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content" style="border-radius: 24px;background-color: #1B2658;width: 326px;height: 128px;margin-left: 62px;margin-top: 89px;display: inline-block;color: #fff;">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="success"style="font-size:30px"><b th:text="${countDoctors}"></b></h3>
+                            <span style="font-size:25px">Total Doctor</span>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fa fa-user-md  float-right fa-4x" aria-hidden="true"></i>
+                            <!--                              <i class="icon-user success font-large-2 float-right"></i>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card-content" style="border-radius: 24px;background-color: #1B2658;width: 326px;height: 128px;margin-left: 62px;margin-top: 89px;display: inline-block;color: #fff;">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="success"style="font-size:30px"><b th:text="${countNurse}"></b></h3>
+                            <span style="font-size:25px">Total Nurse</span>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fa fa-user-md  float-right fa-4x" aria-hidden="true"></i>
+                            <!--                              <i class="icon-user success font-large-2 float-right"></i>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content" style="border-radius: 24px;background-color: #1B2658;width: 326px;height: 128px;margin-left: 62px;margin-top: 89px;display: inline-block;color: #fff;">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="success"style="font-size:30px"><b th:text="${countComplain}"></b></h3>
+                            <span style="font-size:25px">Total Complain</span>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fa fa-hospital-user  float-right fa-4x" aria-hidden="true"></i>
+                            <!--                              <i class="icon-user success font-large-2 float-right"></i>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card-content" style="border-radius: 24px;background-color: #1B2658;width: 326px;height: 128px;margin-left: 62px;margin-top: 89px;display: inline-block;color: #fff;">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="success"style="font-size:30px"><b th:text="${countBeds}"></b></h3>
+                            <span style="font-size:25px">Occupied Beds</span>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fa fa-procedures  float-right fa-4x" aria-hidden="true"></i>
+                            <!--                              <i class="icon-user success font-large-2 float-right"></i>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

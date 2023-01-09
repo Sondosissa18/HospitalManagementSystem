@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style type="text/css">
+     @media print {
+<!--  * {-->
+<!--    visibility: hidden;-->
+<!--  }-->
+  .container {
+    visibility: visible;
+  }
+
+.btn{
+display:none;
+}
+title{
+visibility:hidden
+}
+
+    </style>
+
+<body>
+
+<nav class="navbar  navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Hospital Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/dashboard}">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/logout}">Logout</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container center mt-5">
+    <h1>Doctors Details</h1><br>
+
+    <form  th:object="${doctors}"   >
+        <input type="hidden" th:field="*{id}" >
+        <div class="form-group">
+            <label for="exampleInputname1">Doctors Name</label>
+            <input type="text" th:field="*{name}" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" disabled>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="exampleInputdocNum1">Doctors Email</label>
+            <input type="email" th:field="*{docNum}" class="form-control" id="exampleInputdocNum1" aria-describedby="docNumHelp" disabled>
+
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="exampleInputdepartment1">Doctors Position</label>
+            <input type="text" th:field="*{department}" class="form-control" id="exampleInputdepartment1" aria-describedby="departmentHelp" disabled>
+
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="exampleInputsalary1">Doctors Salary</label>
+            <input type="text" th:field="*{salary}" class="form-control" id="exampleInputsalary1" aria-describedby="salaryHelp" disabled>
+
+        </div>
+        <br/>
+
+    </form>
+    <button onclick="window.print()" class="btn btn-primary">Print </button>
+</div>
+</body>
+</html>
