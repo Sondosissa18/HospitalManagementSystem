@@ -76,7 +76,7 @@
             <td th:text="${patient.phoneNumber}"></td>
             <td>
                 <a th:href="@{/showPatientData/{id}(id=${patient.id})}"><button type="button" class="btn btn-info"><i class="fa-solid fa-eye"></i>&nbsp;View</button></a>
-                <a th:href="@{/assignNurseForm"><button type="button" class="btn btn-dark"><i class="fa-solid fa-pen"></i>&nbsp;Assign</button></a>
+                <a th:href="@{/showFormForAssign/{id}(id=${patient.id})}"><button type="button" class="btn btn-dark"><i class="fa-solid fa-pen"></i>&nbsp;Assign</button></a>
                 <a th:href="@{/showFormForUpdate/{id}(id=${patient.id})}"><button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Update</button></a>
                 <a th:href="@{/deletePatient/{id}(id=${patient.id})}"><button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i>&nbsp;Delete</button></a>
 
