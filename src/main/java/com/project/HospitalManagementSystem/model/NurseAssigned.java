@@ -17,7 +17,7 @@ public class NurseAssigned {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
-    private Set<Patients> patients;
-    private Set<Nurse> nurses;
+    private String patients;
+    private String nurses;
 
 }

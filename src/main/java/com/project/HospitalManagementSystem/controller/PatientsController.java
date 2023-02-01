@@ -61,13 +61,13 @@ public class PatientsController {
         return "view";
     }
 
-    @GetMapping("/assignNurseForm/{id}")
-    public String showFormForUpdate(@PathVariable(value = "id") Long id, Model model){
-        Patients patients  = patientsService.getPatientsById(id);
-        model.addAttribute("patient",patients);
-        return "assignNurse";
-
-    }
+//    @GetMapping("/assignNurseForm/{id}")
+//    public String showFormForUpdate(@PathVariable(value = "id") Long id, Model model){
+//        Patients patients  = patientsService.getPatientsById(id);
+//        model.addAttribute("patient",patients);
+//        return "assignNurse";
+//
+//    }
 
 
 
@@ -89,6 +89,14 @@ public class PatientsController {
     }
 
 
+    @GetMapping("/showFormForAssign")
+    public String showFormForAssign(){
+//        @PathVariable(value = "id") Long id, Model model
+//        Patients patients  =patientsService.getPatientsById(id);
+//        model.addAttribute("patients",patients);
+        return "assignNurseForm";
+
+    }
 
 
 

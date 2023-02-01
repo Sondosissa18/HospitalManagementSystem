@@ -22,10 +22,10 @@ public class Beds {
     private String number;
 
 
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "Patients_id")
-    @JsonBackReference
-    private Patients patients;
+//    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    @JoinColumn(name = "Patients_id")
+//    @JsonBackReference
+//    private Patients patients;
 
 
 }
