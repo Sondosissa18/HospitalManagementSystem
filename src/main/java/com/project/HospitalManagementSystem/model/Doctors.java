@@ -30,10 +30,10 @@ public class Doctors {
     private Double salary;
 
 
-    //@ManyToMany : And Many patients have many doctors.
-    @ManyToMany(mappedBy = "doctors", fetch = FetchType.LAZY)
-    @JsonBackReference
-    private Set<Patients> patients;
+//    //@ManyToMany : And Many patients have many doctors.
+//    @ManyToMany(mappedBy = "doctors", fetch = FetchType.LAZY)
+//    @JsonBackReference
+//    private Set<Patients> patients;
 
 
 

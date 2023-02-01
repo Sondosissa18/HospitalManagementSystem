@@ -27,10 +27,10 @@ public class Ambulance {
     private String registrationNumber;
 
 
-    //one ambulance have many patience
-    @OneToMany(mappedBy ="ambulance", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private Set<Patients> patients;
+//    //one ambulance have many patience
+//    @OneToMany(mappedBy ="ambulance", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JsonManagedReference
+//    private Set<Patients> patients;
 
 
 }

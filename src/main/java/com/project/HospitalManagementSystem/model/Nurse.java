@@ -25,11 +25,11 @@ public class Nurse {
 
     private String name;
 
-
-    @OneToOne(mappedBy = "nurse", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "Patients_id")
-    @JsonBackReference
-    private Patients patients;
+//
+//    @OneToOne(mappedBy = "nurse", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "Patients_id")
+//    @JsonBackReference
+//    private Patients patients;
 
 
 }
