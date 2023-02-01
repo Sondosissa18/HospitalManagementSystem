@@ -25,8 +25,8 @@ public class assignmentController {
 
     @GetMapping("/assignments")
     public  String getAssignments(Model model){
-        List<Patients> patients = patientsRepository.findAll();
-        model.addAttribute("patients", patients);
+
+        model.addAttribute("listOfNurse", nurseRepository.findAll());
         return "assignments";
     }
 
