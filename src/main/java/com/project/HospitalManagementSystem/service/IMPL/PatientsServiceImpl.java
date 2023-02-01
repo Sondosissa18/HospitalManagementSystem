@@ -1,6 +1,6 @@
 package com.project.HospitalManagementSystem.service.IMPL;
 
-import com.project.HospitalManagementSystem.model.Patients;
+import com.project.HospitalManagementSystem.model.Patient;
 import com.project.HospitalManagementSystem.repository.PatientsRepository;
 import com.project.HospitalManagementSystem.service.PatientsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,26 +15,27 @@ public class PatientsServiceImpl implements PatientsService {
     private PatientsRepository patientsRepository;
 
 
+
     @Override
-    public List<Patients> allPatients() {
+    public List<Patient> allPatients() {
         return patientsRepository.findAll();
     }
 
     @Override
-    public void addPatients(Patients patients) {
-        patientsRepository.save(patients);
+    public void addPatients(Patient patient) {
+        patientsRepository.save(patient);
 
     }
 
     @Override
-    public Patients updatePatientsInfo(Long id, Patients patients) {
-        Patients updatePatients = patientsRepository.findById(id).orElseThrow(()->
-               new RuntimeException("Patients id not found"));
-        updatePatients.setName(patients.getName());
-        updatePatients.setEmail(patients.getEmail());
-        updatePatients.setPhoneNumber(patients.getPhoneNumber());
-        patientsRepository.save(updatePatients);
-        return patients;
+    public Patient updatePatientsInfo(Long id, Patient patient) {
+        Patient updatePatient = patientsRepository.findById(id).orElseThrow(()->
+               new RuntimeException("Patient id not found"));
+        updatePatient.setName(patient.getName());
+        updatePatient.setEmail(patient.getEmail());
+        updatePatient.setPhoneNumber(patient.getPhoneNumber());
+        patientsRepository.save(updatePatient);
+        return patient;
     }
 
     @Override
@@ -43,7 +44,9 @@ public class PatientsServiceImpl implements PatientsService {
     }
 
     @Override
-    public Patients getPatientsById(Long id) {
+    public Patient getPatientsById(Long id) {
         return null;
     }
+
+
 }

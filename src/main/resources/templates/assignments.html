@@ -28,7 +28,7 @@
         <th>phone Number</th>
         <th>Assign Nurse</th>
     </tr>
-    <tr th:each="patient : ${patients}">
+    <tr th:each="patient : ${patient}">
         <td th:text="${patient.nurse_id}">Patient ID</td>
         <td th:text="${patient.name}">Patient Name</td>
         <td th:text="${patient.email}">Patient Email</td>

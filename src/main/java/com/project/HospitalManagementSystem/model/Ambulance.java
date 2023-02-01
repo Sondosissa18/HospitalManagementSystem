@@ -30,7 +30,7 @@ public class Ambulance {
 //    //one ambulance have many patience
 //    @OneToMany(mappedBy ="ambulance", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    @JsonManagedReference
-//    private Set<Patients> patients;
+//    private Set<Patient> patients;
 
 
 }

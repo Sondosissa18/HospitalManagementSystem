@@ -36,24 +36,40 @@
 
 <div class="container center mt-5">
     <h1>Complain Form</h1><br>
-<!--    <form th:action="@{/saveComplain}", th:object="${patients}" method="post" >-->
-<!--        <input type="hidden" th:field="*{id}" >-->
-<!--        <div class="form-group">-->
-<!--            <label for="exampleInputName1">Patient Name</label>-->
-<!--            <input type="text" th:field="*{name}" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Enter Name">-->
-<!--        </div>-->
+
+    <form class="mx-1 mx-md-4" th:action="@{/assignments}"  method="post">
+
+        <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select Patient</label>
+                        <select  th:field="*{listOfPatients}" class="form-control" id="exampleFormControlSelect1">
+                            <option value="0">Choose...</option>
+                            <option th:each="patient : ${listOfPatients}" th:value="${patient.id}"  th:text="${patient.name}"></option>
+                        </select>
+                    </div>
+        <br>
+        <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select Nurse</label>
+                        <select th:field="*{listOfNurse}"  class="form-control" id="exampleFormControlSelect2">
+                            <option value="0">Choose...</option>
+                            <option th:each="nurse : ${listOfNurse}" th:value="${nurse.id}" th:text="${nurse.name}"></option>
+                        </select>
+                    </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
 <!--        <br/>-->
-<!--        <div class="form-group">-->
-<!--            <label for="exampleFormControlSelect1">Select Nurse</label>-->
-<!--            <select class="form-control" id="exampleFormControlSelect1">-->
-<!--                <option selected>Choose...</option>-->
-<!--                <option>Sondos</option>-->
-<!--                <option>Issa</option>-->
-<!--                <option>Habibi</option>-->
-<!--                <option>Demo</option>-->
-<!--            </select>-->
-<!--        </div>-->
-<!--        <br/>-->
+<!--&lt;!&ndash;        <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="exampleFormControlSelect1">Select Nurse</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <select class="form-control" id="exampleFormControlSelect1">&ndash;&gt;-->
+<!--&lt;!&ndash;                <option selected>Choose...</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option>Sondos</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option>Issa</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option>Habibi</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option>Demo</option>&ndash;&gt;-->
+<!--&lt;!&ndash;            </select>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <br/>&ndash;&gt;-->
 
 <!--        <button type="submit" class="btn btn-primary">Save Patient Complain</button>-->
 <!--    </form>-->

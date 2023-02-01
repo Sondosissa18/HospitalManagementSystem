@@ -25,7 +25,7 @@ public class Beds {
 //    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 //    @JoinColumn(name = "Patients_id")
 //    @JsonBackReference
-//    private Patients patients;
+//    private Patient patients;
 
 
 }

@@ -33,7 +33,7 @@ public class Doctors {
 //    //@ManyToMany : And Many patients have many doctors.
 //    @ManyToMany(mappedBy = "doctors", fetch = FetchType.LAZY)
 //    @JsonBackReference
-//    private Set<Patients> patients;
+//    private Set<Patient> patients;
 
 
 

@@ -1,12 +1,7 @@
 package com.project.HospitalManagementSystem.model;
-
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -14,14 +9,21 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Nurse {
-
+@Table(name = "patients")
+public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Patients_id")
     private Long id;
+
     private String name;
 
+    private String email;
+
+    private String relation;
+
+    private String phoneNumber;
 
 
 }

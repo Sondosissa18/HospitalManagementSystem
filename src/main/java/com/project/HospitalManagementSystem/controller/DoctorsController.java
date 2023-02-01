@@ -1,7 +1,6 @@
 package com.project.HospitalManagementSystem.controller;
 
 import com.project.HospitalManagementSystem.model.Doctors;
-import com.project.HospitalManagementSystem.model.Patients;
 import com.project.HospitalManagementSystem.repository.DoctorsRepository;
 import com.project.HospitalManagementSystem.service.DoctorsService;
 import org.springframework.beans.factory.annotation.Autowired;
